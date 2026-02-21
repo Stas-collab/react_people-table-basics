@@ -1,4 +1,4 @@
-const BASE_URL = 'https://mate-academy.github.io/react_people-table/api';
+const BASE_URL = 'https://mate-academy.github.io/react_people-table/api/';
 
 function wait(delay: number) {
   return new Promise(resolve => {
