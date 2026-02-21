@@ -1,6 +1,6 @@
 import React from 'react';
 import { Person } from '../../types';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import { PersonLink } from '../PersonLink/PersonLink';
 type Props = {
@@ -40,14 +40,7 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
               })}
             >
               <td>
-                <Link
-                  to={`/people/${p.slug}`}
-                  className={classNames({
-                    'has-text-danger': p.sex === 'f',
-                  })}
-                >
-                  {p.name}
-                </Link>
+                <PersonLink person={p} />
               </td>
 
               <td>{p.sex}</td>

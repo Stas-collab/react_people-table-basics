@@ -23,14 +23,8 @@ function request<T>(
   }
 
   return wait(1000)
-    .then(() => fetch(BASE_URL + url, options))
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status}  ${response.statusText}`);
-      }
-
-      return response.json();
-    });
+    .then(() => fetch(new URL(url, BASE_URL).toString(), options))
+    .then(response => response.json() as Promise<T>);
 }
 
 export const client = {
